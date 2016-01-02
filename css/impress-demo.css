@@ -399,11 +399,11 @@ a:focus {
     height: 230px; /* 1 */
 }
 
-#substeps .areThere, #substeps .ofCourse {
+.substep {
     display: none;
 }
 
-#substeps .areThereVisible, #substeps .ofCourceVisible {
+.substep.active {
     display: inline-block;
 }
 

@@ -273,7 +273,7 @@
 
     <div id="substeps" class="step" data-x="6700" data-y="-100" data-scale="6" data-stepId="substeps">
         <p>Are there <b>substeps</b> too?</p> 
-        <p><span class="areThere">Are there?</span> <span class="ofCourse">Of course!</span></p>
+        <p><span class="substep">Are there?</span> <span class="substep">Of course!</span></p>
     </div>
     
     <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
@@ -412,20 +412,6 @@ if ("ontouchstart" in document.documentElement) {
         For some example uses of this API check the last part of the source of impress.js where the API
         is used in event handlers.
     */
-
-    // Subscribe to the `impress:init`-event to add the actions to the steps after impress is initialized.
-    document.getElementById("impress").addEventListener("impress:init", function(){ 
-        var api = impress();
-         
-        api.addActionToStep('substeps', function(stepElement){ stepElement.querySelector(".areThere").classList.add("areThereVisible"); });
-        api.addActionToStep('substeps', function(stepElement){ stepElement.querySelector(".ofCourse").classList.add("ofCourceVisible"); });
-        
-        api.addResetActionToStep('substeps', function(stepElement){ 
-            stepElement.querySelector(".areThere").classList.remove("areThereVisible");
-            stepElement.querySelector(".ofCourse").classList.remove("ofCourceVisible");
-        });
-    });
-
     impress().init();
 </script>
 
