@@ -322,6 +322,23 @@
             }
             
             stepsData["impress-" + el.id] = step;
+
+            // Adds actions for each substep
+            var substeps = $$(".substep", el);
+
+            substeps.forEach(function(substep) {
+                step.actions.push(function() {
+                    substep.classList.add("active");
+                });
+            });
+
+            (function(substeps){
+                step.resetAction = function() {
+                    substeps.forEach(function(substep) {
+                        substep.classList.remove("active");
+                    });
+                };
+            })(substeps);
             
             css(el, {
                 position: "absolute",
